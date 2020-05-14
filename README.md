@@ -28,4 +28,4 @@ or
 
 Using Github ISSUES system feedback.
 
-Thack very mach !
+Thank very mach !
