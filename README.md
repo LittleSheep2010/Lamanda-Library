@@ -10,12 +10,19 @@ How to use Lamanda ? So eazy !
 
 You only download you need version for Lamanda, and copy Lamanda folder to your project folder.
 
-and in your code, add this code `#include "Lamanda/<Your need use library>"`.
+and in your code, add this code `#include "Lamanda/< library class >/< library all name >"`.
 
-> **WARNING :**  
-> **Please put `<Your need use library>`, change to library name !**  
-> **Like `#include "Lamanda/dataProcessing.h"`, please don't forget this !**
+You can see This is a library list :
 
+| Library class | Library all name | Library include code                        |
+| ------------- | ---------------- | ------------------------------------------- |
+| Console       | usingLibrary     | `#include "Lamanda/Console/usingLibrary.h"` |
+| Data          | configSystem     | `#include "Lamanda/Data/configSystem.h"`    |
+| Data          | dataProcessing   | `#include "Lamanda/Data/dataProcessing.h"`  |
+| GameEngine    | playerClass      | `#include "Lamanda/Data/playerClass.h"`     |
+
+If you want inculde all Lamanda Library, only need add code
+`#include "Lamanda/Lamanda.h"`
 Just this ! :yum:
 
 ## Feedback

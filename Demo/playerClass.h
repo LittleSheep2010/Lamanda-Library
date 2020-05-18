@@ -1,5 +1,0 @@
-/*
- * Hummmmm
- * Emtpy !
- * Sorry
- */
