@@ -25,6 +25,135 @@ If you want inculde all Lamanda Library, only need add code
 `#include "Lamanda/Lamanda.h"`
 Just this ! :yum:
 
+## Files
+
+This chapter can help you decided Include what files, please look over !
+
+| File name        | Role                                                         |
+| ---------------- | ------------------------------------------------------------ |
+| usingLibrary.h   | This file can help you Include order Library                 |
+| configSystem.h   | This file can help you load some sittings, but it is Demo    |
+| dataProcessing.h | This file can help you load some file, and change file property |
+| playerClass.h    | Support some game player Value and Function, But it is Demo too |
+
+
+
+## Functions
+
+If you don't want see code, but you want use Lamanda Library ? Please look this, this can help you !
+
+### Function list
+
+| Function name  | Class        | Using                                                     | In file          |
+| -------------- | ------------ | --------------------------------------------------------- | ---------------- |
+| loader         | configLoader | `configLoader(string filePath);`                          | configSystem.h   |
+| readingLineStr | *Nope*       | `readingLineStr(string filePath, int readLine);`          | dataProccesing.h |
+| deleteFile     | *Nope*       | `deleteFile(const string filePath);`                      | dataProccesing.h |
+| filePresence   | *Nope*       | `filePresence(const string filePath);`                    | dataProccesing.h |
+| changeFileName | *Nope*       | `changeFileName(string filePath,string changedFileName);` | dataProccesing.h |
+| createFile     | *Nope*       | `createFile(const string filePath);`                      | dataProccesing.h |
+
+**Ps : Why don't have "playerClass.h" ? Because it is very hard, so please to look code !**
+
+### Using function code
+
+There have using all in function list function code, if you need that, please look over !
+
+#### configLoader
+
+```C++
+#include "Lamanda/Data/configSystem.h" // Load library
+#include <iostream> // Load base library
+using namespace std; // Using namespace
+
+int main() {
+  configLoader loaderTemp;
+  loaderTemp.configLoader::loader("./TempConfig.txt");
+  cout << loaderTemp.loadoutConfig << endl;
+  return 0;
+}
+```
+
+#### readingLineStr
+
+```C++
+#include "Lamanda/Data/dataProcessing.h" // Load library
+#include <iostream> // Load base library
+using namespace std; // Using namespace
+
+int main() {
+	string playerName = readingLineStr("./playerData", 20);
+  cout << "> New player name : " << playerName << endl;
+  return 0;
+}
+```
+
+#### deleteFile
+
+```C++
+#include "Lamanda/Data/dataProcessing.h" // Load library
+#include <iostream> // Load base library
+using namespace std; // Using namespace
+
+int main() {
+	if(deleteFile("./Exam Answers.pdf") == true)
+    cout << "> Oh my god, I survived." << endl;
+  else
+    cout << "> Oh my god, I can't survived !" << endl;
+  return 0;
+}
+```
+
+#### filePresence
+
+```C++
+#include "Lamanda/Data/dataProcessing.h" // Load library
+#include <iostream> // Load base library
+using namespace std; // Using namespace
+
+int main() {
+	if(filePresence("./Exam papers.docs") == true)
+    cout << "> Oh my god, I survived." << endl;
+  else
+    cout << "> Oh my god, I can't survived !" << endl;
+  return 0;
+}
+```
+
+#### changeFileName
+
+```C++
+#include "Lamanda/Data/dataProcessing.h" // Load library
+#include <iostream> // Load base library
+using namespace std; // Using namespace
+
+int main() {
+	if(changeFileName("./Exam papers.docs", "Exam papers of LittleSheep_") == true)
+    cout << "> Wyyyyyyy ~" << endl;
+  else
+    cout << "> WTF " << endl;
+  return 0;
+}
+```
+
+#### createFile
+
+```C++
+#include "Lamanda/Data/dataProcessing.h" // Load library
+#include <iostream> // Load base library
+using namespace std; // Using namespace
+
+int main() {
+	if(createFile("./Github README.md") == true)
+    cout << "> What should I write?" << endl;
+  else
+    cout << "> * You broke the computer with a hammer. *" << endl;
+  return 0;
+}
+```
+
+LOL
+
 ## Feedback
 
 Welcome feedback you using this library encountered BUG !

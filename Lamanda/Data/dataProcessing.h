@@ -8,7 +8,7 @@
 using namespace std;
 
 // Data of text code
-string readingLineTx_Str(const string filePath, int readLine) {
+string readingLineStr(const string filePath, int readLine) {
     // Create file reading task
     ifstream readingFile; // Create file I - O value 
     readingFile.open(filePath, ios::in); // Write file I - O
