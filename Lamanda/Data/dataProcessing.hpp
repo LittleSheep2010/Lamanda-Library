@@ -1,5 +1,5 @@
-#ifndef dataProcessing_h
-#define dataProcessing_h
+#ifndef dataProcessing_hpp
+#define dataProcessing_hpp
 
 #include <iostream>
 #include <fstream>
