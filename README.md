@@ -14,14 +14,14 @@ and in your code, add this code `#include "Lamanda/< library class >/< library a
 
 You can see This is a library list :
 
-| Library class | Library all name | Library include code                        |
-| ------------- | ---------------- | ------------------------------------------- |
-| Console       | usingLibrary     | `#include "Lamanda/Console/usingLibrary.h"` |
-| Data          | configSystem     | `#include "Lamanda/Data/configSystem.h"`    |
-| Data          | dataProcessing   | `#include "Lamanda/Data/dataProcessing.h"`  |
-| GameEngine    | playerClass      | `#include "Lamanda/Data/playerClass.h"`     |
+| Library class | Library all name      | Library include code                                |
+| ------------- | --------------------- | --------------------------------------------------- |
+| Console       | usingLibrary          | `#include "Lamanda/Console/usingLibrary.hpp"`       |
+| Data          | temperatrueProcessing | `#include "Lamanda/Data/temperatrueProcessing.hpp"` |
+| Data          | dataProcessing        | `#include "Lamanda/Data/dataProcessing.hpp"`        |
+| GameEngine    | playerClass           | `#include "Lamanda/Data/playerClass.hpp"`           |
 
-If you want inculde all Lamanda Library, only need add code
+If you want include all Lamanda Library, only need add code
 `#include "Lamanda/Lamanda.h"`
 Just this ! :yum:
 
@@ -29,12 +29,12 @@ Just this ! :yum:
 
 This chapter can help you decided Include what files, please look over !
 
-| File name        | Role                                                         |
-| ---------------- | ------------------------------------------------------------ |
-| usingLibrary.h   | This file can help you Include order Library                 |
-| configSystem.h   | This file can help you load some sittings, but it is Demo    |
-| dataProcessing.h | This file can help you load some file, and change file property |
-| playerClass.h    | Support some game player Value and Function, But it is Demo too |
+| File name                 | Role                                                         |
+| ------------------------- | ------------------------------------------------------------ |
+| usingLibrary.hpp          | This file can help you Include order Library                 |
+| temperatureProcessing.hpp | This file can help you change temperature                    |
+| dataProcessing.hpp        | This file can help you load some file, and change file property |
+| playerClass.hpp           | Support some game player Value and Function, But it is Demo too |
 
 
 
@@ -164,4 +164,4 @@ or
 
 Using Github ISSUES system feedback.
 
-Thank very mach !
+Thank very much !
