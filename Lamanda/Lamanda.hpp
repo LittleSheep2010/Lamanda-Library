@@ -1,8 +1,8 @@
 #ifndef usingLibrary_hpp
 #define usingLibrary_hpp
 
-#include "Console/usingLibrary.h"
-#include "Data/dataProcessing.h"
+#include "Console/usingLibrary.hpp"
+#include "Data/dataProcessing.hpp"
 #include "Data/temperatureProcessing.hpp"
 using namespace std;
 
