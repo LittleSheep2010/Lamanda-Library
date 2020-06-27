@@ -7,12 +7,12 @@
  * @FilePath: /Documents/Code/GitBuffer/Lamanda-Library/Lamanda/Lamanda.hpp
  */ 
 
-#ifndef usingLibrary_hpp
-#define usingLibrary_hpp
+#ifndef usingLibrary_h
+#define usingLibrary_h
 
-#include "Console/usingLibrary.hpp"
-#include "Console/outputControl.hpp"
-#include "Data/dataProcessing.hpp"
-#include "Data/temperatureProcessing.hpp"
-#include "Data/ascllProcessing.hpp"
+#include "Console/usingLibrary.h"
+#include "Console/outputControl.h"
+#include "Data/dataProcessing.h"
+#include "Data/temperatureProcessing.h"
+#include "Data/ascllProcessing.h"
 #endif
