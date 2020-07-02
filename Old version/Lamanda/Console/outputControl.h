@@ -15,31 +15,37 @@
 using namespace std;
 
 class outputControl {
-    /* 
-     * This class is not need create new class value,
-     * Using "outputControl::< Function name >" is done!
-     */
+    private:
+        typedef void noRETURN;
 
     public: /* functions */
         bool linePrint(int lineLength, int templateIndex);
+        noRETURN clearScreen(bool usingWINDOWS_CMDmode);
 
     public: /* values */
         vector<string> lineTempate = {
             /*
              * You can customize this Tempate.
              * and if you Tempate is very good, you can update in github!
+             * P.s. all value Index in linePrint function Index is be add 1.
              */
             "-", "=", "*", "_"
         };
 };
 
 bool outputControl::linePrint(int lineLength, int templateIndex) {
-    string comboxString;
+    string comboString;
 
-    // Start combox!
+    // Start combo!
     for(int i = 1; i <= lineLength; i++) {
-        comboxString.append(lineTempate[templateIndex]);
-    } printf("%s\n", comboxString.c_str());
+        comboString.append(lineTempate[templateIndex + 1]);
+    } printf("%s\n", comboString.c_str());
+}
+
+outputControl::noRETURN outputControl::clearScreen(bool usingWINDOWS_CMDmode) {
+    if(!usingWINDOWS_CMDmode) system("clear");
+    else if(usingWINDOWS_CMDmode) system("cls");
+    else return;
 }
 
 #endif

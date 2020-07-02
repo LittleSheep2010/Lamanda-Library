@@ -12,7 +12,6 @@
 
 #include "Console/usingLibrary.hpp"
 #include "Console/outputControl.hpp"
-#include "Data/dataProcessing.hpp"
 #include "Data/temperatureProcessing.hpp"
 #include "Data/ascllProcessing.hpp"
 #include "Algorithm/algorithmBase.hpp"

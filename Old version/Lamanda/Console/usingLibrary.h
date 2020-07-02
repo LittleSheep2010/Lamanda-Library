@@ -1,5 +1,5 @@
-#ifndef usingLibrary_h
-#define usingLibrary_h
+#ifndef usingLibrary_hpp
+#define usingLibrary_hpp
 
 #include <iostream>
 #include <fstream>
