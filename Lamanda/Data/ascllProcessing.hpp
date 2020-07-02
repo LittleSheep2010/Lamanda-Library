@@ -14,8 +14,7 @@ char ascllProcessing::upLetter(const char inputCHAR) {
         char buffer = inputCHAR + 32; return buffer;
     } else if(inputCHAR >= 97 && inputCHAR <= 122) {
         char buffer = inputCHAR - 32; return buffer;
-    } else 
-        return;
+    }
 }
 
 #endif
