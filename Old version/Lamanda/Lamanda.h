@@ -12,7 +12,8 @@
 
 #include "Console/usingLibrary.h"
 #include "Console/outputControl.h"
-#include "Data/dataProcessing.h"
 #include "Data/temperatureProcessing.h"
 #include "Data/ascllProcessing.h"
+#include "Algorithm/algorithmBase.h"
+#include "Algorithm/algorithmPlus.h"
 #endif
