@@ -2,6 +2,7 @@
 #define algorithmPlus_hpp
 #include <vector>
 #include <iostream>
+#include <algorithm>
 using namespace std;
 
 class algorithmPlus {
@@ -22,7 +23,14 @@ class algorithmPlus {
         }; class vectorProcessing {
             public:
                 int vectorMaxInt(vector<int> maxObj);
+                int vectorMaxInt(vector<int> maxObj, bool REVERSE);
                 int vectorMaxInt(vector<int> maxObj, int range1, int range2);
+                int vectorMaxInt(vector<int> maxObj, int range1, int range2, bool REVERSE);
+        }; class scienceValueProcessing {
+            public:
+                int takeMedian(vector<int> processingVector);
+                int average(vector<int> processingVector);
+                int average(vector<int> processingVector, bool scoreMode);
         };
 };
 
@@ -85,10 +93,13 @@ double algorithmPlus::randomNumber::randomFloatGet(double range1, double range2)
 }
 
 double algorithmPlus::randomNumber::randomFloatGet(bool Zero2one) {
-    int max, min; max = 1; min = 0;
-    double returnModule1 = (double)(rand() % 101) / 101; int usingMinRange = min + 1;
-    double returnModule2 = (double)((rand() % (max - min + 1)) + min); returnModule2 = returnModule2 - returnModule1;
-    return returnModule1 + returnModule2;
+    if(Zero2one) {
+        int max, min; max = 1; min = 0;
+        double returnModule1 = (double)(rand() % 101) / 101; int usingMinRange = min + 1;
+        double returnModule2 = (double)((rand() % (max - min + 1)) + min); returnModule2 = returnModule2 - returnModule1;
+        return returnModule1 + returnModule2;
+    } else return 0.0;
+    
 }
 
 double algorithmPlus::randomNumber::randomFloatGet() {
@@ -100,4 +111,85 @@ double algorithmPlus::randomNumber::randomFloatGet() {
     double returnModule2 = (double)((rand() % (max - min + 1)) + min); returnModule2 = returnModule2 - returnModule1;
     return returnModule1 + returnModule2;
 }
+
+// class of vectorProcessing
+
+int algorithmPlus::vectorProcessing::vectorMaxInt(vector<int> maxObj) {
+    int max;
+    for(int i = 0; i < maxObj.size(); i++) {
+        if(i == 0) max = maxObj[i];
+        if(maxObj[i] > max) max = maxObj[i];
+    } return max;
+}
+
+int algorithmPlus::vectorProcessing::vectorMaxInt(vector<int> maxObj, bool REVERSE) {
+    if(REVERSE) {
+        int min;
+        for(int i = 0; i < maxObj.size(); i++) {
+            if(i == 0) min == maxObj[i];
+            if(maxObj[i] < min) min = maxObj[i];
+        } return min;
+    } else {
+        int max;
+        for(int i = 0; i < maxObj.size(); i++) {
+            if(i == 0) max = maxObj[i];
+            if(maxObj[i] > max) max = maxObj[i];
+        } return max;
+    }
+    
+}
+
+// class of scienceValueProcessing
+
+/*
+ * 这个函数可以帮你求出 中位数
+ * 需要一个 vector 用来进行求中位数 
+ * This function can help you find the median
+ * Need a vector to find the median
+ */
+int algorithmPlus::scienceValueProcessing::takeMedian(vector<int> processingVector) {
+    int vectorSize = processingVector.size();
+    int processingArray[vectorSize];
+    // vector to array
+    for(int i = 0; i < vectorSize; i++) { processingArray[i] = processingVector[i]; }
+    // Start processing
+    for(int i = 1; i <= vectorSize; i++) {
+        if(vectorSize % 2 != 0) return processingArray[(vectorSize / 2) - 1];
+        if(vectorSize % 2 == 0) return (processingArray[(vectorSize / 2) - 1] + processingArray[(vectorSize / 2 + 1) - 1]);
+    }
+}
+
+int algorithmPlus::scienceValueProcessing::average(vector<int> processingVector) {
+    int processingVectorAdder = 0;
+    for(int i = 0; i < processingVector.size(); i++) { processingVectorAdder += processingVector[i]; }
+    return processingVectorAdder / processingVector.size();
+}
+
+int algorithmPlus::scienceValueProcessing::average(vector<int> processingVector, bool scoreMode) {
+    if(scoreMode) {
+        // remove maximum and minimun
+        int max, min; vector<int> ::iterator maxID; vector<int> ::iterator minID;
+        for(int i = 0; i < processingVector.size(); i++) {
+            if(i == 0) {
+                max = min = processingVector[i]; 
+                maxID = find(processingVector.begin(), processingVector.end(), max);
+                minID = find(processingVector.begin(), processingVector.end(), min);
+                continue; 
+            }
+            if(processingVector[i] > max) { max = processingVector[i]; maxID = find(processingVector.begin(), processingVector.end(), max);}
+            if(processingVector[i] < min) { min = processingVector[i]; minID = find(processingVector.begin(), processingVector.end(), min);}
+        } processingVector.erase(maxID); processingVector.erase(minID);
+        
+        // average
+        int processingVectorAdder = 0;
+        for(int i = 0; i < processingVector.size(); i++) { processingVectorAdder += processingVector[i]; }
+        return processingVectorAdder / processingVector.size();
+    } else {
+        // average
+        int processingVectorAdder = 0;
+        for(int i = 0; i < processingVector.size(); i++) { processingVectorAdder += processingVector[i]; }
+        return processingVectorAdder / processingVector.size();
+    }
+}
+
 #endif
