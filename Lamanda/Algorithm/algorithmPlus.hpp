@@ -20,6 +20,7 @@ class algorithmPlus {
                 double randomFloatGet(double range1, double range2);
                 double randomFloatGet(bool Zero2one);
                 double randomFloatGet();
+                string randomStringGet(vector<string> stringList);
         }; class vectorProcessing {
             public:
                 int vectorMaxInt(vector<int> maxObj);
@@ -110,6 +111,11 @@ double algorithmPlus::randomNumber::randomFloatGet() {
     double returnModule1 = (double)(rand() % 101) / 101; int usingMinRange = min + 1;
     double returnModule2 = (double)((rand() % (max - min + 1)) + min); returnModule2 = returnModule2 - returnModule1;
     return returnModule1 + returnModule2;
+}
+
+string algorithmPlus::randomNumber::randomStringGet(vector<string> stringList) {
+    int chooseIndex = algorithmPlus::randomNumber::randomIntGet(0, stringList.size());
+    return stringList[chooseIndex];
 }
 
 // class of vectorProcessing
