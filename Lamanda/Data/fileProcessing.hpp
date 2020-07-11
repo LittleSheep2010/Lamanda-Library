@@ -16,8 +16,6 @@ class fileProcessing {
         bool filePresence(const string filePath);
         bool changeFileName(const string filePath,const string changedFileName);
         bool createFile(const string filePath);
-        int countFileLines(const string filePath);
-        bool readingFile2Vector(const string filePath);
 };
 
 // Data of text code
@@ -38,30 +36,6 @@ string fileProcessing::readingLineStr(const string filePath, int readLine) {
     }
 
     readingFile.close(); return buffer;
-}
-
-int fileProcessing::countFileLines(const string filePath) {
-    ifstream readingFile; readingFile.open(filePath, ios::in);
-    int lineCount; string buffer;
-    if(readingFile.fail())
-        return;
-    
-    while(getline(readingFile, buffer, '\n')) { lineCount++; }
-    readingFile.close(); return lineCount;
-}
-
-bool fileProcessing::readingFile2Vector(const string filePath) {
-    ifstream readingFile; readingFile.open(filePath, ios::in);
-    int fileLines = fileProcessing::countFileLines(filePath);
-    if(readingFile.fail())
-        return false;
-    
-    int nowReadingLine = 1;
-    for(int i = 0; i <= fileLines; i++) {
-        string pushBuffer;
-        for(int i = 0; getline(readingFile, pushBuffer) && i < nowReadingLine - 1; i++) 
-        { fileProcessing::readOutVector.push_back(pushBuffer); nowReadingLine++; }
-    }
 }
 
 bool fileProcessing::deleteFile(const string filePath) {
