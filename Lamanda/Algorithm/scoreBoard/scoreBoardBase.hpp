@@ -2,6 +2,8 @@
 #define scoreBoardBase_hpp
 
 #include <iostream>
+#include <string>
+#include <algorithm>
 using namespace std;
 
 class scoreBoard {
@@ -92,11 +94,24 @@ bool scoreBoard::lockedScoreLock(const bool REVERSE) {
 }
 
 double scoreBoard::requestScore(const bool deleteFloat) {
-    
+    if(!deleteFloat) {
+        string floatBuffer = to_string(scoreBoard::addedFloat); 
+        floatBuffer = floatBuffer.substr(1, floatBuffer.size() - 1);
+        string requestResult = to_string(scoreBoard::score) + floatBuffer;
+        double buffer = atof(requestResult.c_str());
+        return buffer;
+    } else {
+        double buffer = (double)scoreBoard::score;
+        return buffer;
+    }
 }
 
 double scoreBoard::requestScore() {
-    
+    string floatBuffer = to_string(scoreBoard::addedFloat); 
+    floatBuffer = floatBuffer.substr(1, floatBuffer.size() - 1);
+    string requestResult = to_string(scoreBoard::score) + floatBuffer;
+    double buffer = atof(requestResult.c_str());
+    return buffer;
 }
 
 #endif
