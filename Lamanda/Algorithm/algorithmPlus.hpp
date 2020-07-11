@@ -25,8 +25,8 @@ class algorithmPlus {
             public:
                 int vectorMaxInt(vector<int> maxObj);
                 int vectorMaxInt(vector<int> maxObj, bool REVERSE);
-                int vectorMaxInt(vector<int> maxObj, int range1, int range2);
-                int vectorMaxInt(vector<int> maxObj, int range1, int range2, bool REVERSE);
+                double vectorMaxFloat(vector<double> maxObj);
+                double vectorMaxFloat(vector<double> maxObj, bool REVERSE);
         }; class scienceValueProcessing {
             public:
                 int takeMedian(vector<int> processingVector);
@@ -143,6 +143,30 @@ int algorithmPlus::vectorProcessing::vectorMaxInt(vector<int> maxObj, bool REVER
         } return max;
     }
     
+}
+
+double algorithmPlus::vectorProcessing::vectorMaxFloat(vector<double> maxObj) {
+    double max;
+    for(int i = 0; i < maxObj.size(); i++) {
+        if(i == 0) max = maxObj[i];
+        if(maxObj[i] > max) max = maxObj[i];
+    } return max;
+}
+
+double algorithmPlus::vectorProcessing::vectorMaxFloat(vector<double> maxObj, bool REVERSE){
+    if(REVERSE) {
+        double min;
+        for(int i = 0; i < maxObj.size(); i++) {
+            if(i == 0) min = maxObj[i];
+            if(maxObj[i] < min) min = maxObj[i];
+        } return min;
+    } else {
+        double max;
+        for(int i = 0; i < maxObj.size(); i++) {
+            if(i == 0) max = maxObj[i];
+            if(maxObj[i] > max) max = maxObj[i];
+        } return max;
+    }
 }
 
 // class of scienceValueProcessing
