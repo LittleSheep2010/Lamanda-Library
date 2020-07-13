@@ -1,4 +1,4 @@
-# Lamanda-Library
+# Lits-Library
 
 Next generation for C++ library, maybe :cold_sweat:
 
