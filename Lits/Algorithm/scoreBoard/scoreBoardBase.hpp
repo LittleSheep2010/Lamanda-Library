@@ -6,6 +6,10 @@
 #include <algorithm>
 using namespace std;
 
+  /*           此 class 是一个 DEMO  >>> / 警告 / >>> 可能达不到预期效果               */
+ /* ---------------------------------------------------------------------------- */
+/* This class is a DEMO >>> / warning / >>> may not achieve the expected effect */
+
 class scoreBoard {
     public: // Score Board value
         string owner;

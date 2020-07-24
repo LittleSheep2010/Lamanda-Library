@@ -16,6 +16,10 @@ class algorithmBase {
             public: 
                 int circleAreaCalculation(int RADIUS, unsigned int piAccuracy);
                 int circleAreaCalculation(int DIAMETER, unsigned int piAccuracy);
+
+                bool valueChange(int *a, int *b);
+                bool valueChange(double *a, double *b);
+                bool valueChange(bool *a, bool *b); 
         };
         
 };
@@ -56,6 +60,19 @@ int algorithmBase::orsayAlgorithm::circleAreaCalculation(int DIAMETER, unsigned 
     if(piAccuracy > 5) return 0;
     string x = "3.141592654"; string buffer = x.substr(0, piAccuracy + 2); double p = atof(buffer.c_str());
     return p * DIAMETER;
+}
+
+
+
+bool valueChange(int *a, int *b) {
+    int buffer;
+    
+    // Error processing
+    if(*a == *b) return false;
+
+    // Processing
+    buffer = *b; *a = *b; *a = buffer;
+    return true;
 }
 
 #endif
