@@ -15,6 +15,8 @@
 #include <string>
 using namespace std;
 
+string newLine = "\n";
+
 class outputControl {
     private:
         typedef void noRETURN;
