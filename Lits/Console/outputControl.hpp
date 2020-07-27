@@ -15,7 +15,7 @@
 #include <string>
 using namespace std;
 
-string newLine = "\n";
+string newLine__ = "\n";
 
 class outputControl {
     private:
