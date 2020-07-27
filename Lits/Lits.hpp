@@ -14,6 +14,5 @@
 #include "Console/outputControl.hpp"
 #include "Data/temperatureProcessing.hpp"
 #include "Data/ascllProcessing.hpp"
-#include "Algorithm/algorithmBase.hpp"
 #include "Algorithm/algorithmPlus.hpp"
 #endif
